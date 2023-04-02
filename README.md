@@ -19,7 +19,7 @@ $ docker compose up
 <!-- ## 🛠️ Tecnologias utilizadas -->
 ## 🛠️ Technologies used
 
-- [React](https://pt-br.reactjs.org/) - JavaScript library for creating the web interface
+- [React](https://react.dev/) - JavaScript library for creating the web interface
 - [.NET](https://dotnet.microsoft.com/) - Back-end framework for developing microservices
 - [Swagger](https://swagger.io/) - Tool for API documentation
 - [Docker](https://www.docker.com/) - Platform for creating and running containers
