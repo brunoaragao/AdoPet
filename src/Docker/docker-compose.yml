@@ -1,0 +1,10 @@
+services:
+  pet-adoption:
+    build:
+      context: ../../src
+      dockerfile: Services/PetAdoption/Dockerfile
+    depends_on:
+      - "pet-adoption-db"
+
+  pet-adoption-db:
+    image: "mysql:8.0.32"

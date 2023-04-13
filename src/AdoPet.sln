@@ -1,0 +1,63 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{ECBE80EA-7F26-4577-8807-82306E721B2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PetAdoption", "PetAdoption", "{87BB75F3-DD70-45E4-97D0-B8471D12B5C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{82A7EFBE-828D-4020-A013-D7E3E356B2DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetAdoption.Domain", "Services\PetAdoption\PetAdoption.Domain\PetAdoption.Domain.csproj", "{F3F89107-826E-4F8D-9015-A24B837D9060}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{7220BD4F-2257-4E78-AE28-8C8F77454DE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetAdoption.Application", "Services\PetAdoption\PetAdoption.Application\PetAdoption.Application.csproj", "{35890529-52F9-4712-B5A9-06C06371F3FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{C26F9AD5-CC2A-42D4-8700-6334CB7C5808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetAdoption.Infrastructure", "Services\PetAdoption\PetAdoption.Infrastructure\PetAdoption.Infrastructure.csproj", "{75121883-3D4E-4640-BDE1-7AF8294E406E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{B6B0224A-1ECC-4342-A6F6-81FD45E9D69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetAdoption.Api", "Services\PetAdoption\PetAdoption.Api\PetAdoption.Api.csproj", "{768433C3-6D62-4324-B11C-FA1B6C68AC36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3F89107-826E-4F8D-9015-A24B837D9060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F89107-826E-4F8D-9015-A24B837D9060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F89107-826E-4F8D-9015-A24B837D9060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F89107-826E-4F8D-9015-A24B837D9060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35890529-52F9-4712-B5A9-06C06371F3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35890529-52F9-4712-B5A9-06C06371F3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35890529-52F9-4712-B5A9-06C06371F3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35890529-52F9-4712-B5A9-06C06371F3FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75121883-3D4E-4640-BDE1-7AF8294E406E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75121883-3D4E-4640-BDE1-7AF8294E406E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75121883-3D4E-4640-BDE1-7AF8294E406E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75121883-3D4E-4640-BDE1-7AF8294E406E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{768433C3-6D62-4324-B11C-FA1B6C68AC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{768433C3-6D62-4324-B11C-FA1B6C68AC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{768433C3-6D62-4324-B11C-FA1B6C68AC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{768433C3-6D62-4324-B11C-FA1B6C68AC36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87BB75F3-DD70-45E4-97D0-B8471D12B5C6} = {ECBE80EA-7F26-4577-8807-82306E721B2D}
+		{82A7EFBE-828D-4020-A013-D7E3E356B2DF} = {87BB75F3-DD70-45E4-97D0-B8471D12B5C6}
+		{F3F89107-826E-4F8D-9015-A24B837D9060} = {82A7EFBE-828D-4020-A013-D7E3E356B2DF}
+		{7220BD4F-2257-4E78-AE28-8C8F77454DE7} = {87BB75F3-DD70-45E4-97D0-B8471D12B5C6}
+		{35890529-52F9-4712-B5A9-06C06371F3FE} = {7220BD4F-2257-4E78-AE28-8C8F77454DE7}
+		{C26F9AD5-CC2A-42D4-8700-6334CB7C5808} = {87BB75F3-DD70-45E4-97D0-B8471D12B5C6}
+		{75121883-3D4E-4640-BDE1-7AF8294E406E} = {C26F9AD5-CC2A-42D4-8700-6334CB7C5808}
+		{B6B0224A-1ECC-4342-A6F6-81FD45E9D69B} = {87BB75F3-DD70-45E4-97D0-B8471D12B5C6}
+		{768433C3-6D62-4324-B11C-FA1B6C68AC36} = {B6B0224A-1ECC-4342-A6F6-81FD45E9D69B}
+	EndGlobalSection
+EndGlobal
