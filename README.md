@@ -16,7 +16,6 @@ Open the **AdoPet/src/Docker** folder in the terminal and run the following comm
 $ docker compose up
 ```
 
-<!-- ## 🛠️ Tecnologias utilizadas -->
 ## 🛠️ Technologies used
 
 - [React](https://react.dev/) - JavaScript library for creating the web interface
@@ -29,14 +28,8 @@ $ docker compose up
 
  The project was developed using the microservices architecture.
 
-<!-- TODO: change src link to main branch -->
-<img src="https://github.com/brunoaragao/AdoPet/blob/develop/img/architecture.drawio.png" alt="Architecture" width="600"/>
+<img src="https://github.com/brunoaragao/AdoPet/blob/main/img/architecture.drawio.png" alt="Architecture" width="600"/>
 
 ## 📋 Checklist
-- [ ] Adoption service
-- [ ] Identity service
-  - [ ] Authentication
-  - [ ] Registration
-- [ ] Profile service
-- [ ] Web Gateway
-- [ ] Web Client
+- [x] Adoption service
+- [ ] ?
