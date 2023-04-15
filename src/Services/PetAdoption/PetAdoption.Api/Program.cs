@@ -4,6 +4,7 @@ builder.Services.AddDbContext<AdoptionContext>(options =>
     options.UseMySQL(builder.Configuration.GetConnectionString("PetAdoptionContext")!));
 
 builder.Services.AddScoped<IAdopterRepository, AdopterRepository>();
+builder.Services.AddScoped<IShelterRepository, ShelterRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationErrorsToModelStateBehavior<,>));
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));

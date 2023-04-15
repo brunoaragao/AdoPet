@@ -8,6 +8,7 @@ global using AdoPet.Services.PetAdoption.Application.Dtos;
 global using AdoPet.Services.PetAdoption.Application.Errors;
 global using AdoPet.Services.PetAdoption.Application.Queries;
 global using AdoPet.Services.PetAdoption.Domain.AggregateModels.AdopterAggregates;
+global using AdoPet.Services.PetAdoption.Domain.AggregateModels.ShelterAggregates;
 global using AdoPet.Services.PetAdoption.Infrastructure.Data;
 global using AdoPet.Services.PetAdoption.Infrastructure.Data.Repositories;
 

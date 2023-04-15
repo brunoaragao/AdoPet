@@ -1,5 +1,6 @@
 global using AdoPet.Libraries.SeedWork;
 global using AdoPet.Services.PetAdoption.Domain.AggregateModels.AdopterAggregates;
+global using AdoPet.Services.PetAdoption.Domain.AggregateModels.ShelterAggregates;
 global using AdoPet.Services.PetAdoption.Infrastructure.Data;
 
 global using Microsoft.EntityFrameworkCore;

@@ -7,6 +7,7 @@ public class AdoptionContext : DbContext
     }
 
     public DbSet<Adopter> Adopters => Set<Adopter>();
+    public DbSet<Shelter> Shelters => Set<Shelter>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
