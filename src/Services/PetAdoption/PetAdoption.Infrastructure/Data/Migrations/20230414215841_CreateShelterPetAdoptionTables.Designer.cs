@@ -3,6 +3,7 @@ using System;
 using AdoPet.Services.PetAdoption.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace PetAdoption.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AdoptionContext))]
-    partial class AdoptionContextModelSnapshot : ModelSnapshot
+    [Migration("20230414215841_CreateShelterPetAdoptionTables")]
+    partial class CreateShelterPetAdoptionTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
