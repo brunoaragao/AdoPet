@@ -28,7 +28,7 @@ $ docker compose up
 
  The project was developed using the microservices architecture.
 
-<img src="https://github.com/brunoaragao/AdoPet/blob/main/img/architecture.drawio.png" alt="Architecture" width="600"/>
+<img src="https://github.com/brunoaragao/AdoPet/blob/develop/img/architecture.drawio.png" alt="Architecture" width="600"/>
 
 ## 📋 Checklist
 - [x] Adoption service
