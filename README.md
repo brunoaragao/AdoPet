@@ -18,7 +18,7 @@ The API documentation will be available at:
 
 # 🏗️ Architecture
 
-<img src="https://github.com/brunoaragao/AdoPet/blob/main/img/architecture.drawio.png" alt="Architecture" width="100%">
+<img src="https://raw.githubusercontent.com/brunoaragao/AdoPet/develop/img/architecture.drawio.svg" alt="Architecture" width="100%">
 
 <dl>
     <dt><strong>Api Gateway</strong></dt>
