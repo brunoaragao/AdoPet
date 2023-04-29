@@ -16,10 +16,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
-    - name: Lint Action
-      uses: wearerequired/lint-action@v2.3.0
+    - name: Run linters
+      uses: wearerequired/lint-action@v2
       with:
-          dotnet_format: true
+        dotnet_format: true
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
