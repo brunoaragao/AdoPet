@@ -1,0 +1,64 @@
+services:
+  api-gateway:
+    build: 
+      context: .
+      dockerfile: Gateway/Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - "identity-api"
+      - "adopty-api"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - Services__Identity__Url=http://identity-api:80
+      - Services__Adopty__Url=http://adopty-api:80
+
+  identity-api:
+    build:
+      context: .
+      dockerfile: Services/Identity/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__IdentityConnection=Server=sqlserver;Database=Identity;User Id=sa;Password=P@ssw0rd;TrustServerCertificate=true;
+      - RabbitMq__Host=rabbitmq
+    depends_on:
+      - "rabbitmq"
+      - "sqlserver"
+
+  adopty-api:
+    build:
+      context: .
+      dockerfile: Services/Adopty/Dockerfile
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__AdoptyConnection=Server=sqlserver;Database=Adopty;User Id=sa;Password=P@ssw0rd;TrustServerCertificate=true;
+      - RabbitMq__Host=rabbitmq
+    depends_on:
+      - "rabbitmq"
+      - "sqlserver"
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=P@ssw0rd
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  sqlserver-data:
