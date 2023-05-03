@@ -1,6 +1,6 @@
 services:
   api-gateway:
-    build: 
+    build:
       context: .
       dockerfile: Gateway/Dockerfile
     ports:
@@ -11,13 +11,16 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - Services__Identity__Url=http://identity-api:80
-      - Services__Adopty__Url=http://adopty-api:80
+      - Services__Identity__Url=http://identity-api
+      - Services__Adopty__Url=http://adopty-api
+      - Swagger__OAuth2__TokenUrl=http://localhost:5001/connect/token
 
   identity-api:
     build:
       context: .
       dockerfile: Services/Identity/Dockerfile
+    restart: on-failure
+
     ports:
       - "5001:80"
     environment:
@@ -43,6 +46,8 @@ services:
     depends_on:
       - "rabbitmq"
       - "sqlserver"
+      - "identity-api"
+    restart: on-failure
 
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2019-latest

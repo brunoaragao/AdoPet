@@ -12,7 +12,7 @@ public class PetsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetPetsByPageAsync(int page)
+    public async Task<IActionResult> GetPetsByPageAsync(int page = 1)
     {
         var pets = await _adoptyService.GetPetsByPageAsync(page);
         return Ok(pets);

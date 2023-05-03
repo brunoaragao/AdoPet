@@ -1,6 +1,6 @@
 namespace Identity.Api.Controllers;
 
-[Route("connect")]
+[Route("Connect")]
 [ApiController]
 public class ConnectController : ControllerBase
 {
@@ -13,7 +13,7 @@ public class ConnectController : ControllerBase
         _bus = bus;
     }
 
-    [HttpPost("register")]
+    [HttpPost("Register")]
     public async Task<IActionResult> RegisterAsync([FromBody] RegisterRequest message)
     {
         var userName = message.UserName;

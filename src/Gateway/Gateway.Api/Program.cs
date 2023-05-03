@@ -14,7 +14,8 @@ services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     options.RequireHttpsMetadata = false;
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateAudience = false
+        ValidateAudience = false,
+        ValidateIssuer = false
     };
 });
 
@@ -31,8 +32,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.OAuthClientId("password-flow-client");
-        options.OAuthAppName("Password Flow Client");
+        options.OAuthClientId("api-gateway-swagger-ui-client");
+        options.OAuthAppName("API Gateway Swagger UI Client");
+        options.OAuthUsePkce();
     });
 }
 

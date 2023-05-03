@@ -4,10 +4,10 @@ COPY ["Gateway/Gateway.Api/Gateway.Api.csproj", "Gateway/Gateway.Api/"]
 RUN dotnet restore "Gateway/Gateway.Api/Gateway.Api.csproj"
 COPY . .
 WORKDIR "/src/Gateway/Gateway.Api"
-RUN dotnet build "Gateway.Api.csproj" -c Debug -o /app/build
+RUN dotnet build "Gateway.Api.csproj" -c Debug -o /app/build --no-restore
 
 FROM build AS publish
-RUN dotnet publish "Gateway.Api.csproj" -c Debug -o /app/publish
+RUN dotnet publish "Gateway.Api.csproj" -c Debug -o /app/publish --no-build
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS final
 WORKDIR /app

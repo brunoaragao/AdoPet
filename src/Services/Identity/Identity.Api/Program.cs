@@ -28,7 +28,10 @@ builder.Services.AddIdentityServer(options => options.Discovery.CustomEntries.Ad
 builder.Services.AddSingleton<ICorsPolicyService>(container =>
 {
     var logger = container.GetRequiredService<ILogger<DefaultCorsPolicyService>>();
-    return new DefaultCorsPolicyService(logger) { AllowAll = true };
+    return new DefaultCorsPolicyService(logger)
+    {
+        AllowAll = true
+    };
 });
 
 builder.Services.AddMassTransit(x => x.UsingRabbitMq((context, cfg) => cfg.Host(configuration["RabbitMQ:Host"])));

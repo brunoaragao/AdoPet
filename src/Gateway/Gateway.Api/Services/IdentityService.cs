@@ -1,27 +1,31 @@
+global using IdentityModel.Client;
+
 namespace Gateway.Api.Services;
 
 public class IdentityService : IIdentityService
 {
     private readonly HttpClient _client;
+    private readonly IConfiguration _configuration;
 
-    public IdentityService(IHttpClientFactory httpClientFactory)
+    public IdentityService(IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
         _client = httpClientFactory.CreateClient("Identity");
+        _configuration = configuration;
     }
 
-    public async Task<TokenResponse> LoginAsync(string username, string password)
+    public async Task<string> LoginAsync(string username, string password)
     {
-        var request = new Dictionary<string, string>
+        var discovery = await _client.GetDiscoveryDocumentAsync(_configuration["Services:Identity:Url"]);
+        var response = await _client.RequestPasswordTokenAsync(new PasswordTokenRequest
         {
-            ["client_id"] = "password-flow-client",
-            ["grant_type"] = "password",
-            ["username"] = username,
-            ["password"] = password
-        };
-        var response = await _client.PostAsync("connect/token", new FormUrlEncodedContent(request));
-        response.EnsureSuccessStatusCode();
-        var content = await response.Content.ReadAsStringAsync();
-        return JsonSerializer.Deserialize<TokenResponse>(content)!;
+            Address = discovery.TokenEndpoint,
+
+            ClientId = "api-gateway-client",
+
+            UserName = username,
+            Password = password
+        });
+        return response.AccessToken!;
     }
 
     public async Task RegisterUserAsync(string username, string email, string password, IEnumerable<string> roles, string? fullName = null)

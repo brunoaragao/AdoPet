@@ -4,14 +4,14 @@ public static class SwaggerGenOptionsExtensions
 {
     public static void AddPasswordSecurityDefinition(this SwaggerGenOptions options, IConfiguration configuration)
     {
-        options.AddSecurityDefinition("password-flow-client", new OpenApiSecurityScheme
+        options.AddSecurityDefinition("api-gateway-swagger-ui-client", new OpenApiSecurityScheme
         {
             Type = SecuritySchemeType.OAuth2,
             Flows = new OpenApiOAuthFlows
             {
                 Password = new OpenApiOAuthFlow
                 {
-                    TokenUrl = new Uri($"{configuration["Services:Identity:Url"]}/connect/token")
+                    TokenUrl = new Uri(configuration["Swagger:OAuth2:TokenUrl"]!)
                 }
             }
         });
@@ -23,7 +23,7 @@ public static class SwaggerGenOptionsExtensions
                     Reference = new OpenApiReference
                     {
                         Type = ReferenceType.SecurityScheme,
-                        Id = "password-flow-client"
+                        Id = "api-gateway-swagger-ui-client"
                     }
                 },
                 Array.Empty<string>()

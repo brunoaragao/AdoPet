@@ -6,19 +6,14 @@ public static class Config
 {
     public static IEnumerable<IdentityResource> IdentityResources
     {
-        get
-        {
-            yield return new IdentityResources.OpenId();
-            yield return new IdentityResources.Profile();
-        }
+        get => Enumerable.Empty<IdentityResource>();
     }
 
     public static IEnumerable<ApiScope> ApiScopes
     {
         get
         {
-            yield return new ApiScope("adopty-api-scope");
-            yield return new ApiScope("gateway-api-scope");
+            yield return new ApiScope("api-gateway-scope");
         }
     }
 
@@ -26,22 +21,21 @@ public static class Config
     {
         get
         {
-
             yield return new Client
             {
-                ClientId = "password-flow-client",
-                ClientName = "Password Flow Client",
-
+                ClientId = "api-gateway-client",
+                ClientName = "API Gateway Client",
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 RequireClientSecret = false,
-
-                AllowedScopes =
-                {
-                    StandardScopes.OpenId,
-                    StandardScopes.Profile,
-                    "adopty-api-scope",
-                    "gateway-api-scope"
-                }
+                AllowedScopes = { "api-gateway-scope" }
+            };
+            yield return new Client
+            {
+                ClientId = "api-gateway-swagger-ui-client",
+                ClientName = "API Gateway Swagger UI Client",
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                RequireClientSecret = false,
+                AllowedScopes = { "api-gateway-scope" }
             };
         }
     }

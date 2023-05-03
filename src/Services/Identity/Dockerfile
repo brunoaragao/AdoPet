@@ -5,10 +5,10 @@ COPY ["Services/Identity/Identity.Contracts/Identity.Contracts.csproj", "Service
 RUN dotnet restore "Services/Identity/Identity.Api/Identity.Api.csproj"
 COPY . .
 WORKDIR "/src/Services/Identity/Identity.Api"
-RUN dotnet build "Identity.Api.csproj" -c Debug -o /app/build
+RUN dotnet build "Identity.Api.csproj" -c Debug -o /app/build --no-restore
 
 FROM build AS publish
-RUN dotnet publish "Identity.Api.csproj" -c Debug -o /app/publish
+RUN dotnet publish "Identity.Api.csproj" -c Debug -o /app/publish --no-build
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS final
 WORKDIR /app
