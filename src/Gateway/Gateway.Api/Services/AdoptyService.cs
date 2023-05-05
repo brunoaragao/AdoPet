@@ -3,6 +3,7 @@ namespace Gateway.Api.Services;
 public class AdoptyService : IAdoptyService
 {
     private readonly HttpClient _client;
+    private static readonly int s_pageSize = 10;
 
     public AdoptyService(IHttpClientFactory httpClientFactory)
     {
@@ -23,9 +24,9 @@ public class AdoptyService : IAdoptyService
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<GetPetsByPageResponse> GetPetsByPageAsync(int page)
+    public async Task<GetPetsByPageResponse> GetPetsByPageAsync(int pageNumber)
     {
-        var response = await _client.GetAsync($"api/v1/pets?page={page}");
+        var response = await _client.GetAsync($"api/v1/pets?pageNumber={pageNumber}&pageSize={s_pageSize}");
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<GetPetsByPageResponse>(content, new JsonSerializerOptions

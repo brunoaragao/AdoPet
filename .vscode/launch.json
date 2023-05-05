@@ -52,9 +52,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/Services/Adopty/Adopty.Api/bin/Debug/net7.0/Adopty.Api.dll",
+            "program": "${workspaceFolder}/src/Services/Adopty/bin/Debug/net7.0/Adopty.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/Services/Adopty/Adopty.Api",
+            "cwd": "${workspaceFolder}/src/Services/Adopty",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
