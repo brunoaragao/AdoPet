@@ -12,7 +12,9 @@ public class PetsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetPetsByPage(int pageNumber = 1, int pageSize = 10)
+    public async Task<IActionResult> GetPetsByPage(
+        int pageNumber = 1,
+        int pageSize = 10)
     {
         var response = await _mediator
             .CreateRequestClient<GetPetsByPage>()

@@ -12,7 +12,9 @@ public class AdoptionsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAdoptionsByPage(int pageNumber = 1, int pageSize = 10)
+    public async Task<IActionResult> GetAdoptionsByPage(
+        int pageNumber = 1,
+        int pageSize = 10)
     {
         return Ok(
             await _mediator

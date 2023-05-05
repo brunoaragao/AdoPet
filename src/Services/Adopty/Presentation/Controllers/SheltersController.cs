@@ -12,7 +12,9 @@ public class SheltersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetSheltersByPage(int pageNumber = 1, int pageSize = 10)
+    public async Task<IActionResult> GetSheltersByPage(
+        int pageNumber = 1,
+        int pageSize = 10)
     {
         var response = await _mediator
             .CreateRequestClient<GetSheltersByPage>()
